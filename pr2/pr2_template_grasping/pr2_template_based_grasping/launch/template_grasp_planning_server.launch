@@ -8,10 +8,10 @@
   <arg name="log_data" value="$(find grasp_template_planning)/data/log_data/" />
 	
   <include file="$(find tabletop_segmenter)/launch/tabletop_segmenter.launch">
-	<arg name="tabletop_segmentation_points_in" value="/camera/depth/points" />
-    <arg name="tabletop_segmentation_depth_in" value="/camera/depth/image_raw" />
-    <arg name="tabletop_segmentation_rgb_in" value="/camera/rgb/image_color" />
-    <arg name="tabletop_segmentation_cam_info" value="/camera/depth/camera_info" />
+	<arg name="tabletop_segmentation_points_in" value="/openni/depth/points" />
+    <arg name="tabletop_segmentation_depth_in" value="/openni/depth/image_raw" />
+    <arg name="tabletop_segmentation_rgb_in" value="/openni/rgb/image_color" />
+    <arg name="tabletop_segmentation_cam_info" value="/openni/depth/camera_info" />
 	<arg name="tabletop_segmentation_srv" value="template_tabletop_segmentation"/>
 	<arg name="tabletop_segmentation_markers" value="template_tabletop_segmentation_markers"/>
   </include>

@@ -24,6 +24,7 @@ rosbuild_genmsg()
 find_package(Eigen REQUIRED)
 include_directories(${EIGEN_INCLUDE_DIRS})
 add_definitions(${EIGEN_DEFINITIONS})
+include_directories("/opt/ros/groovy/include/pcl-1.6/")
 
 rosbuild_add_library(${PROJECT_NAME}
   src/grasp_template.cpp
@@ -34,7 +35,8 @@ rosbuild_add_library(${PROJECT_NAME}
   src/dismatch_measure.cpp
   src/grasp_template_params.cpp
 )
-  
+target_link_libraries(${PROJECT_NAME} pcl_search pcl_surface flann)
+
 #common commands for building c++ executables and libraries
 #rosbuild_add_library(${PROJECT_NAME} src/example.cpp)
 #target_link_libraries(${PROJECT_NAME} another_library)
